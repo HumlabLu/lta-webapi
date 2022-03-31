@@ -1,0 +1,35 @@
+# Set constants
+# MONGO_URL
+
+# Build image
+docker build -t jgranq/lta-api .
+
+# Pack image
+docker save -o ./docker-lta-api-211108.tar jgranq/lta-api
+
+# Move image to server
+scp -r docker-lta-api-211108.tar jo3302gr@lta-staging.ht.lu.se:/home/jo3302gr
+
+# ssh to server
+ssh jo3302gr@ht-lang-track.ht.lu.se
+
+# not always needed
+
+    # Move docker-compose.yml to server
+    scp -r docker-compose.yml jo3302gr@ht-lang-track.ht.lu.se:/home/jo3302gr/docker-compose.200522.yml
+
+    # On server, clean disk from old tars.
+    rm something.tar
+
+    # Prune dangling images
+    docker image prune
+
+    # Stop and remove api container
+    docker stop somecontainerid
+    docker rm somecontainerid
+
+    # Remove api image
+    docker rmi someimageid
+
+# Load tar as image
+docker load -i docker-lta-api-211108.tar

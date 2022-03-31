@@ -1,0 +1,33 @@
+{
+  "title": "Lego 1!",
+  "name": "lego1",
+  "id": "lego1",
+  "publishNotificationTitle": "👑 Hey Champ",
+  "publishNotificationBody": "🍃 There's a new assignment for you.",
+  "expireNotificationTitle": "Don't drop this 👑",
+  "expireNotificationBody": "🧱 Survey time's soon up.",
+  "questions": [
+    {
+      "index": 0,
+      "title": "Lego!",
+      "text": "Velkommen",
+      "type": "header"
+    },
+    {
+      "index": 1,
+      "text": "What does Lego mean?",
+      "type": "single",
+      "values": [
+        "Play Well",
+        "Leg Godt",
+        "I play",
+        "I construct"
+      ]
+    },
+    {
+      "index": 2,
+      "type": "footer",
+      "text": "Thanks"
+    }
+  ]
+}
